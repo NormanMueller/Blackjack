@@ -10,7 +10,7 @@ Original file is located at
 import random
 from random import shuffle
 
-# Kartendeck erzeugen
+# Kartendeck erzeugen blubb
 
 # warum nicht zahlen? das geht dann später leichter zusammenzuzählen.
 # bsp: range / list-comprehention
