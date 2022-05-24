@@ -12,6 +12,7 @@ class test_card_stack(unittest.TestCase):
     def setUp(self):
         self.card_stack  = card_stack(card_deck_init)
 
+
     def test_shuffle_deck_create_generator(self) -> None :
         #given 
         # #prints nur wenn der test nicht failed ;)
@@ -32,6 +33,7 @@ class test_spieler(unittest.TestCase):
         self.spieler  = spieler()
         self.spieler_2  = spieler()
 
+
     def test_draw_card(self) -> None:
         #given
         init = copy.copy(card_deck_init)
@@ -47,12 +49,14 @@ class test_spieler(unittest.TestCase):
         assert self.spieler_2.cards == [(10, 'Herz')]
         self.assertEqual(generator.__next__.call_count, 2)
 
+
     def test_continue(self) -> None:
         #with
         with mock.patch.object(builtins, 'input', lambda _: '1'):
         #thrn
             assert self.spieler.continue_turn() == True
     
+
     def test_no_continue(self) -> None:
         #with
         with mock.patch.object(builtins, 'input', lambda _: '0'):
@@ -66,6 +70,7 @@ class test_game(unittest.TestCase):
         self.game = Game(spieler(), spieler())
         self.player = spieler()
     
+
     def test_get_players_points(self):
         #given
         self.player.cards =  [(11, 'Herz'),(10, 'Herz'), (8, 'Kreuz') ]
@@ -75,6 +80,7 @@ class test_game(unittest.TestCase):
 
         #then
         assert  points == 29
+
 
     def test_game_ends_dealer(self):
         #given
@@ -86,6 +92,7 @@ class test_game(unittest.TestCase):
         #then
         assert  game_ends == True
 
+
     def test_game_ends_player(self):
         #given
         self.game.player.cards =  [(11, 'Herz'),(8, 'Herz'), (3, 'Kreuz') ]
@@ -96,6 +103,7 @@ class test_game(unittest.TestCase):
         #then
         assert  game_ends == True
 
+
     def test_game_continue(self):
         #given
         self.game.player.cards =  [(3, 'Herz'),(8, 'Herz'), (3, 'Kreuz') ]
@@ -105,6 +113,7 @@ class test_game(unittest.TestCase):
 
         #then
         assert  game_ends == False
+
 
     def test_player_turn_continue(self):
         #given
@@ -119,6 +128,7 @@ class test_game(unittest.TestCase):
         #then
             self.assertEqual(mock_card.call_count, 2)
 
+
     def test_player_turn_no_continuation(self):
         #given
          with patch('blackjack.spieler.draw_card') as mock_card, \
@@ -131,6 +141,7 @@ class test_game(unittest.TestCase):
         
         #then
             self.assertEqual(mock_card.call_count, 1)
+
 
     def test_player_turn_assert_card_1(self):
         #given
@@ -146,6 +157,7 @@ class test_game(unittest.TestCase):
         
         #then
             assert self.game.player.cards == [(11, 'Herz')]
+
 
     def test_player_turn_assert_card2(self):
         #given
