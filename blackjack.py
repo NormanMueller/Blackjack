@@ -5,16 +5,16 @@ from typing import Dict, Type, List, Tuple, Generator
 # Kartendeck erzeugen 
 nr = "11 10 10 10 10 9 8 7 6 5 4 3 2".split()
 card_types = "Pik Herz Kreuz Karo".split()
-card_deck = [(num, farbe) for num in nr for farbe in card_types]
+card_deck_init = [(num, farbe) for num in nr for farbe in card_types]
 
 
 # Karten Stapel erzeugen
 class card_stack:
     def __init__(self, card_deck: List[Tuple]) :
         self.card_deck  = card_deck
-        self.card_generator: Generator[Tuple, None, None] = self.shuffle_deck()
+        self.card_generator: Generator[Tuple, None, None] = self.create_genertor()
 
-    def shuffle_deck(self) -> None :
+    def create_genertor(self) -> None :
         shuffle(self.card_deck)
         for i in self.card_deck:
             yield i
@@ -38,8 +38,8 @@ class spieler:
       
 
 # Class Spiel
-class Spiel:
-    def __init__(self, dealer: Type[spieler], player: Type[spieler], card_stack: Type[card_stack]  = card_stack(card_deck)):
+class Game:
+    def __init__(self, dealer: Type[spieler], player: Type[spieler], card_stack: Type[card_stack]  = card_stack(card_deck_init)):
         self.dealer = dealer
         self.player = player
         self.card_generator: Generator[Tuple] = card_stack.card_generator
@@ -96,6 +96,6 @@ class Spiel:
         self.print_cards()
         print(self.print_results())   
         
-
-x = Spiel(spieler(), spieler() )
-x.main()
+if __name__ == "__main__":
+    x = Game(spieler(), spieler() )
+    x.main()
