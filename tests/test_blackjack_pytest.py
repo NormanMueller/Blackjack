@@ -1,5 +1,5 @@
 import copy
-from src.Blackjack_Game.Blackjack import *
+from src.src.Blackjack_Game.Blackjack _Game.src.Blackjack_Game.Blackjack  import *
 import pytest 
 import unittest
 from unittest.mock import Mock, patch,MagicMock
@@ -117,8 +117,8 @@ class test_game(unittest.TestCase):
 
     def test_player_turn_continue(self):
         #given
-         with patch('blackjack.spieler.draw_card') as mock_card, \
-            patch('blackjack.spieler.continue_turn') as mock_continue:
+         with patch('src.Blackjack_Game.Blackjack.spieler.draw_card') as mock_card, \
+            patch('src.Blackjack_Game.Blackjack.spieler.continue_turn') as mock_continue:
 
             mock_continue.side_effect  =  [True,False ]
 
@@ -131,8 +131,8 @@ class test_game(unittest.TestCase):
 
     def test_player_turn_no_continuation(self):
         #given
-         with patch('blackjack.spieler.draw_card') as mock_card, \
-            patch('blackjack.spieler.continue_turn') as mock_continue:
+         with patch('src.Blackjack_Game.Blackjack.spieler.draw_card') as mock_card, \
+            patch('src.Blackjack_Game.Blackjack.spieler.continue_turn') as mock_continue:
 
             mock_continue.side_effect  =  [False ]
 
@@ -145,7 +145,7 @@ class test_game(unittest.TestCase):
 
     def test_player_turn_assert_card_1(self):
         #given
-        with patch('blackjack.spieler.continue_turn') as mock_continue:
+        with patch('src.Blackjack_Game.Blackjack.spieler.continue_turn') as mock_continue:
 
         #when
             mock_continue.side_effect  =  [False ]
@@ -161,7 +161,7 @@ class test_game(unittest.TestCase):
 
     def test_player_turn_assert_card2(self):
         #given
-        with patch('blackjack.spieler.continue_turn') as mock_continue:
+        with patch('src.Blackjack_Game.Blackjack.spieler.continue_turn') as mock_continue:
 
         #when
             mock_continue.side_effect  =  [True ]
