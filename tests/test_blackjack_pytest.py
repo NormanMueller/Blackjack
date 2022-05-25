@@ -1,5 +1,5 @@
 import copy
-from Blackjack.Blackjack import *
+from src.Blackjack_Game.Blackjack import *
 import pytest 
 import unittest
 from unittest.mock import Mock, patch,MagicMock
