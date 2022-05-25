@@ -2,9 +2,7 @@ import random
 
 from random import shuffle
 from typing import Dict, Type, List, Tuple, Generator
-import pandas as pd
 
-print(typing.__version__)
 
 # Kartendeck erzeugen 
 nr = "11 10 10 10 10 9 8 7 6 5 4 3 2".split()
