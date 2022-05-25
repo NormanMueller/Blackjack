@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/Blackjack/Blackjack.py
+src/Blackjack/__init__ .py
+src/Blackjack.egg-info/PKG-INFO
+src/Blackjack.egg-info/SOURCES.txt
+src/Blackjack.egg-info/dependency_links.txt
+src/Blackjack.egg-info/not-zip-safe
+src/Blackjack.egg-info/requires.txt
+src/Blackjack.egg-info/top_level.txt
