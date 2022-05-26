@@ -1,2 +1,2 @@
- random == 3.10
- typing == 3.6
+ random 
+ typing 
