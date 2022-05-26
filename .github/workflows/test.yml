@@ -25,7 +25,7 @@ jobs:
     - name: Test with tox
       run: tox
 
-ame: autopep8
+name: autopep8
 on: pull_request
 jobs:
   autopep8:
